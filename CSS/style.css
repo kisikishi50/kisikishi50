@@ -1,0 +1,465 @@
+/*********************************
+           共通部分
+**********************************/
+html,
+body,
+h1,h2,h3,h4,h5,h6,
+p,
+ul,li{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+html{
+  scroll-behavior: smooth
+}
+
+.container{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul,li{
+  list-style-type: none;
+}
+
+i{
+  padding: 0 16px;
+}
+
+section{
+  padding: 30px 0 100px;
+}
+
+.section-title{
+  font-size: 36px;
+  padding: 16px 0;
+  margin-bottom: 20px;
+}
+
+
+
+/* btn */
+.btn{
+  background-color: rgb(10,40,68);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 20px;
+}
+.btn:hover{
+  background-color: rgba(10,40,68,0.8);
+}
+/******************************
+            header
+*****************************/
+.navbar{
+  background-color: rgb(10,40,68);
+  color: #fff;
+  padding: 10px 0 ;
+  text-align: center;
+  font-size: 24px;
+}
+
+.bg-bg{
+  background: url(../img/h-img.jpg);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center ;
+}
+
+.h-contents{
+  position: relative;
+}
+
+.h-title{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-30%);
+  font-size: 28px;
+}
+.h-title::before,
+.h-title::after{
+  content: '';
+  width: 48px;
+  height: 4px;
+  background: #1d1b38;
+  display: inline-block;
+}
+.h-title::before{
+  transform: rotate(60deg);
+}
+.h-title::after{
+  transform: rotate(-60deg);
+}
+
+.h-contentsBox{
+  overflow: hidden;
+  border: 5px double rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 100px;
+}
+
+.h-left{
+  float: left;
+  font-size: 28px;
+  margin-right: 50px;
+}
+.h-left span:nth-of-type(1){
+  font-size: 12px;
+  text-align: center;
+  background: linear-gradient(transparent 65%, skyblue 65%);
+}
+.h-right{
+  float: right;
+  font-size: 44px;
+  line-height: 100px;
+}
+
+.guide{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-70%);
+}
+
+.guide a{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  margin: 50px 0 0;
+  height: 80px;
+  line-height: 80px;
+  font-size: 24px;
+}
+
+/******************************
+            topMessage
+*****************************/
+.topMessage{
+  padding: 50px 0;
+}
+
+.topMessage-title{
+  font-size: 28px;
+  letter-spacing: 5px;
+}
+
+.topMessage-menu{
+  line-height: 3;
+  padding: 20px 0 0;
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.topMessage-list{
+  width: 60%;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.bg-skyblue{
+  background: linear-gradient(transparent 50%, skyblue);
+}
+
+/*1.フェードインアニメーションの指定*/
+.topMessage-menu {opacity: 0;} /*一瞬表示されるのを防ぐ*/
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;         
+    }
+    100% {
+    opacity: 1;
+    transform: translate(0);
+    }
+}
+ 
+/*2.上下の動きを指定*/
+.updown {transform: translateY(-100px);}
+.downup {transform: translateY(100px);}
+ 
+/*3.左右の動きを指定*/
+.sect02{overflow: hidden;} /*横スクロールバーを隠す*/
+.slide-right {transform: translateX(200px);}
+.slide-left {transform: translateX(-200px);}
+
+
+.solution{
+  background-color: rgb(219,225,228);
+  padding: 50px 0;
+  text-align: center;
+  font-size: 28px;
+  line-height: 2;
+  font-weight: bold;
+}
+
+.bg-yellow{
+  background: linear-gradient(transparent 50%, yellow);
+}
+
+/******************************
+            canDo
+*****************************/
+.canDo-box{
+  width: 80%;
+  margin: 0 auto;
+  line-height: 2;
+  text-align: center;
+  border: 3px double #ccc;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.7) ;
+}
+
+.canDo-sub-title{
+  background: linear-gradient(transparent 50%,yellow 50%);
+  margin-bottom: 15px;
+}
+
+.canDo-box p{
+  text-align: left;
+}
+
+/******************************
+            plan
+*****************************/
+.plan,
+.apply{
+  background-color: rgb(226,246,255);
+}
+
+.card{
+  border: 3px solid black;
+  padding: 24px 16px;
+  transition: .3s;
+  background-color: #fff;
+  color:rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+
+.card:hover{
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+.card-title{
+  font-size: 24px; 
+}
+.price{
+  font-size: 20px;
+  padding: 16px 0;
+}
+.card-text{
+  line-height: 1.8;
+}
+
+.detail-btn{
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  color: orange;
+  border: 3px solid orange;
+  text-align: center;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-top: 10px;
+}
+.detail-btn:hover{
+  background-color: orange;
+  color: #fff;
+}
+
+/******************************
+            Merit
+*****************************/
+.merit1,
+.merit2{
+  width: 80%;
+  margin: 0 auto;
+  line-height: 2;
+  text-align: center;
+  border: 3px double #ccc;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.7) ;
+}
+.merit1{
+  margin-bottom: 50px;
+}
+.merit-title{
+  font-size: 24px;
+}
+
+
+/******************************
+            apply
+*****************************/
+.apply-box > p{
+  margin-bottom: 50px;
+}
+.apply-message{
+  font-size: 24px;
+  line-height: 2;
+}
+
+.apply-btn{
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+  border: 3px double #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 16px 24px;
+  font-size: 20px;
+  color: #000;
+  background-color: #fff;
+  transition: .3s;
+}
+.apply-btn:hover{
+  background-color: rgba(249, 233, 0, .6);
+}
+
+/******************************
+            footer
+*****************************/
+footer{
+  background-color: rgb(10,40,68);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/******************************
+      レスポンシブデザイン
+*****************************/
+
+@media screen and (max-width: 992px) {
+
+  .h-title{
+    width: 100%;
+    font-size: 16px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-25%);
+  }
+  .h-title::before,
+  .h-title::after{
+    content: '';
+    width: 36px;
+    height: 4px;
+    background: #1d1b38;
+    display: inline-block;
+  }
+  .h-title::before{
+    transform: rotate(60deg);
+  }
+  .h-title::after{
+    transform: rotate(-60deg);
+  }
+  
+  .h-contentsBox{
+    border: 5px double rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    width: 80%;
+  }
+  
+  .h-left{
+    padding: 0;
+    margin: 0;
+    float: none;
+    font-size: 32px;
+  }
+
+  .h-left > span{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .h-right{
+    float: none;
+    font-size: 44px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .guide{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+  }
+  
+  .guide a{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    margin: 50px 0 0;
+    height: 80px;
+    line-height: 80px;
+    font-size: 24px;
+  }  
+
+  .guide p{
+    width: 300px;
+  }
+
+  .topMessage-title{
+    font-size: 22px;
+  }
+
+  .topMessage-list{
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .solution p{
+    font-size: 20px;
+  }
+
+  .section-title{
+    font-size: 22px;
+  }
+
+  .merit1,
+  .merit2{
+    width: 100%;
+  }
+
+  .merit1,.merit2 > p{
+    text-align: left;
+  }
+
+  .apply-message{
+    font-size: 18px;
+  }
+
+}  
+
